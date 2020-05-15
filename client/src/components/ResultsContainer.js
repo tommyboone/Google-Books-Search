@@ -15,7 +15,7 @@ function ResultsContainer(props) {
                     link={bookInfo.canonicalVolumeLink}
                     img={bookInfo.imageLinks}
                     path={props.path}
-                    key={book.id}/>
+                    key={book._id}/>
                 })}
             </div>
         );
@@ -48,4 +48,4 @@ function ResultsContainer(props) {
     }
 }
 
-export default ResultsContainer;
+export default ResultsContainer; 

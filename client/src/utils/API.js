@@ -2,15 +2,16 @@ import axios from "axios";
 
 export default {
     getBooks: () => {
-        return axios.get("/api/books");
+        return axios.get("http://localhost:3001/api/books");
     },
     searchBooks: (title) => {
-        return axios.post("/search", {title: title});
+        console.log('about ot serach this title', title)
+        return axios.post("http://localhost:3001/search", {title: title});
     },
     addBookToDB: (bookData) => {
-        return axios.post("/api/books", bookData);
+        return axios.post("http://localhost:3001/api/books", bookData);
     },
     deleteBook: (id) => {
-        return axios.delete(`/api/books/${id}`);
+        return axios.delete(`http://localhost:3001/api/books/${id}`);
     }
 }
