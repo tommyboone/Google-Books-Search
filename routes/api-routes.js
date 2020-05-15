@@ -17,12 +17,13 @@ module.exports = function(app) {
     });
 
     app.post("/search", (req, res) => {
-        // set bookTitle to the req.body.title with spaces replaced with plus signs(+)
+       console.log(req.body) // set bookTitle to the req.body.title with spaces replaced with plus signs(+)
         let bookTitle = req.body.title.replace(/\s/g, "+");
         axios.get(
             `https://www.googleapis.com/books/v1/volumes?q=${bookTitle}&key=${process.env.GBOOKS_KEY}`
         ).then(
             (response) => {
+                console.log('booKS WE FOUND from google serach api', response)
                 res.json(response.data.items)
             }
         ).catch(
@@ -58,7 +59,7 @@ module.exports = function(app) {
 
     // Send every other request to the React app
     // Define any API routes before this runs
-    app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../client/build/index.html"));
-    });
+    // app.get("*", (req, res) => {
+    // res.sendFile(path.join(__dirname, "../client/build/index.html"));
+    // });
 }
