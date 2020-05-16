@@ -24,12 +24,15 @@ class Saved extends React.Component {
   render() {
     console.log(this.state.savedBooks);
     return (
-      <main>
+        <div className="container">
+              <main>
         <ResultsContainer
           savedBooks={this.state.savedBooks}
           path={this.props.match.path}
         />
       </main>
+        </div>
+    
     );
   }
 }

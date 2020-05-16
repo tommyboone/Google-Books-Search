@@ -1,7 +1,9 @@
 import React from "react";
-import SearchForm from "../components/SearchForm";
+import SearchForm from "../components/SearchForm/SearchForm.js";
 import ResultsContainer from "../components/ResultsContainer";
 import API from "../utils/API";
+import "./style.css"
+
 
 class Search extends React.Component {
     constructor(props) {
@@ -24,7 +26,7 @@ class Search extends React.Component {
         API.searchBooks(this.state.bookInput)
             .then(
                 (response) => {
-                    console.log("these are the searched books!!", response)
+                    
                     this.setState({bookData: response.data});
                     this.setState({bookInput: ""});
                 }
@@ -32,16 +34,19 @@ class Search extends React.Component {
     }
 
     render() {
-        console.log('THIS IS BOOKS DATA!!', this.state)
+    
         return(
-            <main>
+            <div className="container">
+                <main>
              
 
-                <SearchForm handleChange={this.handleChange} handleSearchClick={this.handleSearchClick} />
+                <SearchForm handleChange={this.handleChange} handleSearchClick={this.handleSearchClick} className='search-form'/>
                 {(this.state.bookData.length > 0)?
-                    <ResultsContainer bookData={this.state.bookData} path={this.props.match.path}/> : null
+                    <ResultsContainer className="books-container" bookData={this.state.bookData} path={this.props.match.path}/> : null
                 }
             </main>
+            </div>
+            
         );
     }
 }

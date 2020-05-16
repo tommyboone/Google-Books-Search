@@ -5,7 +5,7 @@ export default {
         return axios.get("http://localhost:3001/api/books");
     },
     searchBooks: (title) => {
-        console.log('about ot serach this title', title)
+    
         return axios.post("http://localhost:3001/search", {title: title});
     },
     addBookToDB: (bookData) => {

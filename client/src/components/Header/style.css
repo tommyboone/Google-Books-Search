@@ -2,10 +2,13 @@
     text-align: center;
     background-color: black;
     color:#fff;
+    font-weight: bold;
+    padding-top:200px;
 }
 h1{
     font-size:34px;
 }
 p{
     font-size:24px;
+    
 }
