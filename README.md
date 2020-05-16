@@ -6,3 +6,6 @@
 # Stack
  This app was built using MongoDB, Express Server, React Frontend, and NodeJS
  
+# Screenshot
+![alt_text](./client/src/images/Screenshot.png)
+
